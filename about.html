@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<script src="TESTE.js"></script>
+<script>
+window.onload = function() {
+	CanvasJS.addColorSet("greenShades",
+                [//colorSet Array
+
+                "#2F4F4F",
+                "#008080"           
+                ]);
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	colorSet: "greenShades",
+	title: {
+		text: "Desktop Search Engine Market Share - 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 260,
+		yValueFormatString: "##0.0\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 1, label: "Visualizados"},
+			{y: 99, label: "Não visualizados"}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 370px;"></div>
+</body>
+</html>

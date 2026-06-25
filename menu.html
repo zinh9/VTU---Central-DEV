@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<nav class="navbar navbar-default" role="navigation">	
+			
+			<div class="container">
+				
+				<a class="navbar-brand"><img src="libs/img/logo-vale.png" style="margin-top: -10px"></a>
+				
+				<a class="navbar-brand">Central de Informações - Operação 02 EFVM</a>
+                
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					
+					<ul class="nav navbar-nav">
+						
+						<li class="dropdown">
+							
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Acesso a Sistemas <b class="caret"></b>
+							
+							</a>
+							
+							<ul class="dropdown-menu">
+								<li><a target="_blank" href="https://equipfer.valenet.valeglobal.net/equipfer/">Equipfer</a></li>
+								<li><a target="_blank" href="https://gdb.valeglobal.net/gdb/view/login/login.faces">GDB</a></li>	
+								<li><a target="_blank" href="https://performancemanager4.successfactors.com/sf/home">VES e CSP</a></li>
+								<li><a target="_blank" href="https://lbrportalfolha.valenet.valeglobal.net/portalrh/Produtos/SAAA/Principal2.aspx">E-dados</a></li>
+                                      				<!-- <li><a target="_blank" href="https://valeforms.valeglobal.net/public?id=NLKPqekAAF2tkth%2BgAoX%2BQ%3D%3D">Zigue</a></li> -->
+								<li><a target="_blank" href="https://valeforms.valeglobal.net/public?id=TVBlOZXQcgqFtEARz2m2gA%3D%3D">DSS</a></li>
+								<!-- <li><a target="_blank" href="http://efvmonline/CCO/Passageiro/Sites/VTU/libs/img/2021 FMDS OPERAÇÃO 02.pdf">FMDS Gerência Digital</a></li> -->
+							</ul>
+							
+							
+						
+						</li>
+					    <li class="dropdown">
+							
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Central<b class="caret"></b>
+							
+							</a>
+							
+							<ul class="dropdown-menu">
+								
+								<li><a href="form_visualizar_registro.asp">Consultar Pendências</a></li>
+								
+								<%If session("funcao") = "INSPETOR" or session("funcao") = "SUPERVISOR" or session("nivel") = "ADM" Then%>			
+									<li><a href="form_formulario.asp">Inserir Informação</a></li>
+								<%end if%>
+								
+								<%If session("funcao") = "INSPETOR" or session("funcao") = "SUPERVISOR" or session("nivel") = "ADM" Then%>
+								<li><a href="form_grafico.asp">Relatório</a></li>	
+								<%end if%>
+								
+								<%If session("nivel") = "ADM" Then%>
+								<li><a href="form_editar_cadastro_usuario.asp">Usuários</a></li>	
+								<%end if%>
+							
+							</ul>
+							
+							
+						
+						</li>
+						
+						<li class="dropdown">
+							
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <b class="caret"></b>
+							
+							</a>
+							
+							<ul class="dropdown-menu">
+								<li><a target="_blank" href="http://efvmonline" target="_blank">Efvm Online</a></li>
+								<li><a target="_blank" href="http://172.26.102.90/Sistemas/PainelCCO/PainelCCO.aspx" target="_blank">Painel CCO</a></li>
+								<li><a target="_blank" href="http://172.26.102.90/Sistemas/PainelCCPTU/PainelCCPTU.aspx" target="_blank">Painel CCP</a></li>
+								
+							</ul>
+						
+						</li>
+
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							
+							<a href="#" ><span class="glyphicon glyphicon-user"></span> Bem-vindo (a) <%=session("name")%>!</a>
+							
+						</li>
+						<li class="dropdown">
+							
+							<a href="fecha_session.asp" ><span class="glyphicon glyphicon-log-out"></span> Sair</a>
+							
+						</li>
+					
+					</ul>
+				 
+				</div>
+			
+			</div>
+		  
+		</nav>
+</html>

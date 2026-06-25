@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-chart.js/1.1.1/angular-chart.js"></script>
+
+<div ng-app="app">
+  <div ng-controller="GraficoController as vm" style="height: 50%; width: 50%">
+    <canvas id="pie" class="chart chart-pie" chart-data="vm.grafico.valores" chart-labels="vm.grafico.descricoes">
+    </canvas>
+  </div>
+</div>
+<script>
+(function() {
+  'use strict';
+
+  angular
+    .module('app', ['chart.js']);
+
+  angular
+    .module('app')
+    .controller('GraficoController', GraficoController);
+
+  GraficoController.$inject = [];
+
+  function GraficoController() {
+    var vm = this;
+
+    vm.grafico = {};
+    vm.grafico.descricoes = ['Carros', 'Motos', 'Lanchas'];
+    vm.grafico.valores = [3, 1, 8];
+  }
+})();
+</script>
+
+
+</html>
